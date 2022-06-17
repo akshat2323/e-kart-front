@@ -1,0 +1,23 @@
+body{
+    background-image: url('https://source.unsplash.com/1600x1000/?fruits');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.box2{
+    position: relative;
+    top: 50px;
+    left: 0px;
+    width: 500px;
+    padding: 15px 15px;
+    background: rgba(255,255,255,0.0.3);
+    backdrop-filter: saturate(80%) blur(4px);
+    border: 0.1px solid black;
+    box-shadow: 10px 10px 15px 10px #00000073;
+    border-radius: 35px;
+    
+}
+
+input{
+    max-width: 400px;
+}
