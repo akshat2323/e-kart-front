@@ -13,13 +13,17 @@ function Subs() {
     const calling = async () => {
         console.log('calling running');
         try {
-            const response = await fetch('/', {
+            const res = await fetch('https://e-kart-back.vercel.app/home', {
                 method: "GET",
+                mode: 'cors',
                 headers: {
-                    Acccept: 'application/json',
-                    "Content-Type": 'application/json'
+                    
+                    'Content-Type': 'application/json',
+                    'Accept' : 'application/json',
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Credentials': true
                 },
-                credentials: "include"
+                credentials:"include"
             });
             const data = response.json();
             console.log('fetch runned');

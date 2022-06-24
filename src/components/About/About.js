@@ -13,11 +13,15 @@ function About() {
         console.log('calling running');
         try {
 
-            const res = await fetch('/home', {
+            const res = await fetch('https://e-kart-back.vercel.app/home', {
                 method: "GET",
+                mode: 'cors',
                 headers: {
+                    
                     'Content-Type': 'application/json',
-                    'Accept': 'application/json'
+                    'Accept' : 'application/json',
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Credentials': true
                 },
                 credentials:"include"
             });
