@@ -38,7 +38,7 @@ function Subs() {
 
     useEffect(() => {
         calling();
-    },[]);
+    },);
 
 
 

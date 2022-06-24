@@ -42,7 +42,7 @@ function Home() {
 
     useEffect(() => {
         calling();
-    },[]);
+    },);
 
 
     return (<div>

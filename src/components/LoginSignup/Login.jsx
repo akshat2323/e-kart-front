@@ -37,7 +37,7 @@ function Login() {
             })
         })
         const data = await res.json();
-        if (data.status != 201 || !data) {
+        if (data.status !== 201 || !data) {
             console.log('hiii');
             if (!data.msg) {
                 window.alert(data.error);

@@ -40,7 +40,7 @@ function About() {
 
     useEffect(() => {
         calling();
-    },[]);
+    },);
 
 
     return ( <div>

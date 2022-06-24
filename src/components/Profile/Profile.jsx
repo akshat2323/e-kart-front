@@ -44,7 +44,7 @@ function Profile() {
 
     useEffect(() => {
         calling();
-    },[]);
+    },);
 
 
 

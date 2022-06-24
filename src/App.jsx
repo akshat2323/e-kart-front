@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 // import Navbar from './components/Navbar';
 import Home from './components/Home/Home';
 // import Footer from './components/Footer';
@@ -8,7 +8,6 @@ import About from './components/About/About';
 import Login from './components/LoginSignup/Login';
 import Signup from './components/LoginSignup/Signup';
 import Profile from './components/Profile/Profile';
-import postData from './components/LoginSignup/Login';
 import Subs from './components/Subs/Subs';
 import Logout from './components/Logout/Logout';
 
