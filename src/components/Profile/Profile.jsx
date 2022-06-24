@@ -32,6 +32,7 @@ function Profile() {
             if (!data) {
                 // navigate(`/login`);
                 let err = new Error('Login First');
+                console.log("no data")
                 throw err;
             }else{
                 setUser(data);
