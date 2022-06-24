@@ -25,11 +25,7 @@ function Signup() {
         const{name,phone,address,dob,email,password,cpassword} = user;
         console.log(user);
 
-<<<<<<< HEAD
         const res = await fetch("https://e-kart-back.vercel.app/signup", {
-=======
-        const res = await fetch('https://e-kart-back.vercel.app/signup', {
->>>>>>> 11ceeb476f6b34c0ab182dd15b15a250e69f3e9e
             method:'POST',
             mode: 'cors',
             headers: {

@@ -23,15 +23,10 @@ function Login() {
         e.preventDefault();
         const { email, password } = user;
 
-<<<<<<< HEAD
         const res = await fetch("https://e-kart-back.vercel.app/login", {
             method: 'POST',
             mode: 'cors',
             credentials:'include',
-=======
-        const res = await fetch('https://e-kart-back.vercel.app/login', {
-            method:'POST',
->>>>>>> 11ceeb476f6b34c0ab182dd15b15a250e69f3e9e
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
