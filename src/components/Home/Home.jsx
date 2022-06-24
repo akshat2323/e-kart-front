@@ -25,7 +25,7 @@ function Home() {
                 credentials:"include"
             });
             console.log('fetch runned');
-            const data = await res.json();
+            const data = res.json();
             if (!data) {
                 // navigate(`/login`);
                 let err = new Error('Login First');
