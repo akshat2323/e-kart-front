@@ -15,7 +15,7 @@ function Profile() {
         console.log('calling running');
         try {
 
-            const res = await fetch('https://e-kart-back.vercel.app/home', {
+            const res = await fetch('https://e-kart-back.vercel.app/', {
                 method: "GET",
                 mode: 'cors',
                 headers: {
