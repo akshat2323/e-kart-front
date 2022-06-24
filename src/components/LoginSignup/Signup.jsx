@@ -25,17 +25,21 @@ function Signup() {
         const{name,phone,address,dob,email,password,cpassword} = user;
         console.log(user);
 
-        const res = await fetch('/signup', {
+        const res = await fetch("https://e-kart-back.vercel.app/signup", {
             method:'POST',
+            mode: 'cors',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept' : 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Credentials': true
             },
             body: JSON.stringify({
                 name,phone,address,dob,email,password,cpassword
             })
         })
         const data = await res.json();
-        if(data.status === 422 || !data)
+        if(data.status == 422 || !data)
         {
             window.alert("Failed");
         }else{

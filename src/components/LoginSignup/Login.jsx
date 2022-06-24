@@ -8,44 +8,48 @@ function Login() {
     const navigate = useNavigate();
 
     const [user, setUser] = useState({
-        email:"",password:""
+        email: "", password: ""
     })
 
     let name, value;
-    const handleInputs = (e)=>{
+    const handleInputs = (e) => {
         name = e.target.name;
         value = e.target.value;
 
-        setUser({...user, [name]: value});
+        setUser({ ...user, [name]: value });
     }
 
-    const postData = async (e)=> {
+    const postData = async (e) => {
         e.preventDefault();
-        const{email,password} = user;
+        const { email, password } = user;
 
-        const res = await fetch('/login', {
-            method:'POST',
+        const res = await fetch("https://e-kart-back.vercel.app/login", {
+            method: 'POST',
+            mode: 'cors',
+            credentials:'include',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Credentials': true
             },
             body: JSON.stringify({
-               email,password
+                email, password
             })
         })
         const data = await res.json();
-        if(data.status !== 201 || !data)
-        {
+        if (data.status != 201 || !data) {
             console.log('hiii');
-            if(!data.msg){
+            if (!data.msg) {
                 window.alert(data.error);
-            }else{
+                console.log(data.error);
+            } else {
                 // window.alert(data.msg);
                 navigate(`/`);
             }
-            
-        }else{
+
+        } else {
             // window.alert("Login done");
-            
+
         }
     }
 
@@ -55,15 +59,15 @@ function Login() {
     return (<div className='main'>
         <h1>Log In User</h1>
         <form method="post">
-        <div className="box container">
+            <div className="box container">
                 <div class="mb-3 row">
-                    
+
                     <div class="col-sm-10">
-                        <input type="text" name='email' onChange={handleInputs} placeholder='Enter E-mail' value={user.email} readonly class="mail form-control-plaintext"/>
+                        <input type="text" name='email' onChange={handleInputs} placeholder='Enter E-mail' value={user.email} readonly class="mail form-control-plaintext" />
                     </div>
                 </div>
                 <div class="mb-3 row">
-                   
+
                     <div class="col-sm-10">
                         <input type="password" onChange={handleInputs} value={user.password} name='password' class="password form-control" placeholder='Enter Password' />
                     </div>
@@ -73,8 +77,8 @@ function Login() {
             </div>
 
         </form>
-       
-        </div>);
+
+    </div>);
 }
 
 export default Login;
